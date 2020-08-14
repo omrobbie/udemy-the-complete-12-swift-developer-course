@@ -18,5 +18,11 @@ class ViewController: UIViewController {
     }
 
     @IBAction func btnGetAgeTapped(_ sender: Any) {
+        if let age = txtAge.text {
+            if let ageAsNumber = Int(age) {
+                let ageInCatYears = ageAsNumber * 7
+                lblResult.text = "Your cat is \(ageInCatYears) in cat years."
+            }
+        }
     }
 }
