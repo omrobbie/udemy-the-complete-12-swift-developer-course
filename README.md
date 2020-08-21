@@ -10,3 +10,8 @@ Learn how to create adaptive layout with AutoLayout.<br>
 <img src="IsItPrime/screenshot/preview1.png" width=256 />&nbsp;
 <img src="IsItPrime/screenshot/preview2.png" width=256 />&nbsp;
 <img src="IsItPrime/screenshot/preview3.png" width=256 />&nbsp;
+
+### 3. Egg Timer
+Learn about Navigation Bar, Toolbar, and Timer.<br>
+<img src="EggTimer/screenshot/preview1.png" width=256 />&nbsp;
+<img src="EggTimer/screenshot/preview2.png" width=256 />&nbsp;
