@@ -18,8 +18,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         lblTimeInSeconds.text = String(time)
-
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(decreaseTime), userInfo: nil, repeats: true)
     }
 
     @objc private func decreaseTime() {
@@ -32,17 +30,27 @@ class ViewController: UIViewController {
     }
 
     @IBAction func btnPlayTapped(_ sender: Any) {
+        if !timer.isValid {
+            timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(decreaseTime), userInfo: nil, repeats: true)
+        }
     }
 
     @IBAction func btnPauseTapped(_ sender: Any) {
+        timer.invalidate()
     }
 
     @IBAction func btnMinus10SecTapped(_ sender: Any) {
+        time -= 10
+        lblTimeInSeconds.text = String(time)
     }
 
     @IBAction func btnPlus10SecTapped(_ sender: Any) {
+        time += 10
+        lblTimeInSeconds.text = String(time)
     }
 
     @IBAction func btnResetTimeTapped(_ sender: Any) {
+        time = 200
+        lblTimeInSeconds.text = String(time)
     }
 }
