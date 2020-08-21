@@ -12,8 +12,23 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var lblTimeInSeconds: UILabel!
 
+    var time = 200
+    var timer = Timer()
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        lblTimeInSeconds.text = String(time)
+
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(decreaseTime), userInfo: nil, repeats: true)
+    }
+
+    @objc private func decreaseTime() {
+        if time > 0 {
+            time -= 1
+            lblTimeInSeconds.text = String(time)
+        } else {
+            timer.invalidate()
+        }
     }
 
     @IBAction func btnPlayTapped(_ sender: Any) {
