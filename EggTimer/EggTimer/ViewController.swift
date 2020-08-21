@@ -10,7 +10,24 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var lblTimeInSeconds: UILabel!
+
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+
+    @IBAction func btnPlayTapped(_ sender: Any) {
+    }
+
+    @IBAction func btnPauseTapped(_ sender: Any) {
+    }
+
+    @IBAction func btnMinus10SecTapped(_ sender: Any) {
+    }
+
+    @IBAction func btnPlus10SecTapped(_ sender: Any) {
+    }
+
+    @IBAction func btnResetTimeTapped(_ sender: Any) {
     }
 }
