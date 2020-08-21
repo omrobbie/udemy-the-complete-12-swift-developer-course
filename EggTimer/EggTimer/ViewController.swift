@@ -10,9 +10,11 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    static let DEFAULT_TIME = 200
+
     @IBOutlet weak var lblTimeInSeconds: UILabel!
 
-    var time = 200
+    var time = ViewController.DEFAULT_TIME
     var timer = Timer()
 
     override func viewDidLoad() {
@@ -50,7 +52,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func btnResetTimeTapped(_ sender: Any) {
-        time = 200
+        time = ViewController.DEFAULT_TIME
         lblTimeInSeconds.text = String(time)
     }
 }
