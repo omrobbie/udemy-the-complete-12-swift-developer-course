@@ -14,6 +14,12 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var lblTimeInSeconds: UILabel!
 
+    enum OperationTypes {
+        case increase
+        case decrease
+        case equal
+    }
+
     var time = ViewController.DEFAULT_TIME
     var timer = Timer()
 
@@ -22,10 +28,19 @@ class ViewController: UIViewController {
         lblTimeInSeconds.text = String(time)
     }
 
+    private func refreshLabel(operation: OperationTypes, by value: Int) {
+        switch operation {
+        case .increase: time += value
+        case .decrease: time -= value
+        case .equal: time = value
+        }
+
+        lblTimeInSeconds.text = String(time)
+    }
+
     @objc private func decreaseTime() {
         if time > 0 {
-            time -= 1
-            lblTimeInSeconds.text = String(time)
+            refreshLabel(operation: .decrease, by: 1)
         } else {
             timer.invalidate()
         }
@@ -42,17 +57,14 @@ class ViewController: UIViewController {
     }
 
     @IBAction func btnMinus10SecTapped(_ sender: Any) {
-        time -= 10
-        lblTimeInSeconds.text = String(time)
+        refreshLabel(operation: .decrease, by: 10)
     }
 
     @IBAction func btnPlus10SecTapped(_ sender: Any) {
-        time += 10
-        lblTimeInSeconds.text = String(time)
+        refreshLabel(operation: .increase, by: 10)
     }
 
     @IBAction func btnResetTimeTapped(_ sender: Any) {
-        time = ViewController.DEFAULT_TIME
-        lblTimeInSeconds.text = String(time)
+        refreshLabel(operation: .equal, by: ViewController.DEFAULT_TIME)
     }
 }
