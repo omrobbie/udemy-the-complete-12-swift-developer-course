@@ -15,17 +15,28 @@ class ViewController: UIViewController, UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchData()
+        fetchData(city: "Denpasar")
     }
 
-    private func fetchData() {
+    private func fetchData(city: String) {
         var apiKey = ""
 
         if let path = Bundle.main.path(forResource: "Keys", ofType: "plist"),
             let dict = NSDictionary(contentsOfFile: path) {
             apiKey = dict["ApiKey"] as! String
-            print(apiKey)
         }
+
+        guard let url = URL(string: "http://api.openweathermap.org/data/2.5/weather?q=\(city)&appid=\(apiKey)") else {return}
+
+        URLSession.shared.dataTask(with: url) { (data, _, error) in
+            if let error = error {
+                print(error.localizedDescription)
+                return
+            }
+
+            guard let data = data else {return}
+            print(data)
+        }.resume()
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
