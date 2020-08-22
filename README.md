@@ -15,3 +15,9 @@ Learn how to create adaptive layout with AutoLayout.<br>
 Learn about Navigation Bar, Toolbar, and Timer.<br>
 <img src="EggTimer/screenshot/preview1.png" width=256 />&nbsp;
 <img src="EggTimer/screenshot/preview2.png" width=256 />&nbsp;
+
+### 4. Times Tables
+Learn about TableView and Slider.<br>
+<img src="TimesTables/screenshot/preview1.png" width=256 />&nbsp;
+<img src="TimesTables/screenshot/preview2.png" width=256 />&nbsp;
+<img src="TimesTables/screenshot/preview3.png" width=256 />&nbsp;
