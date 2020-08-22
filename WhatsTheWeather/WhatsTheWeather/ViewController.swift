@@ -15,10 +15,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchData(city: "Denpasar")
+        fetchData()
     }
 
-    private func fetchData(city: String) {
+    private func fetchData(city: String = "") {
         var apiKey = ""
 
         if let path = Bundle.main.path(forResource: "Keys", ofType: "plist"),
@@ -35,7 +35,19 @@ class ViewController: UIViewController, UITextFieldDelegate {
             }
 
             guard let data = data else {return}
-            print(data)
+
+            do {
+                if let decodeData = try JSONSerialization.jsonObject(with: data, options: []) as? NSDictionary,
+                    let main = decodeData["main"] as? NSDictionary,
+                    let kelvinTemp = main["temp"] as? Double {
+                    let celsiusTemp = kelvinTemp - 273.15
+                    DispatchQueue.main.async {
+                        self.lblResult.text = String(format: "%.0f", celsiusTemp) + "℃"
+                    }
+                }
+            } catch {
+                print("Error", error.localizedDescription)
+            }
         }.resume()
     }
 
@@ -49,5 +61,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
 
     @IBAction func btnSubmitTapped(_ sender: Any) {
+        fetchData(city: txtCity.text!)
     }
 }
