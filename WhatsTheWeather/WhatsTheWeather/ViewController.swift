@@ -15,6 +15,17 @@ class ViewController: UIViewController, UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        fetchData()
+    }
+
+    private func fetchData() {
+        var apiKey = ""
+
+        if let path = Bundle.main.path(forResource: "Keys", ofType: "plist"),
+            let dict = NSDictionary(contentsOfFile: path) {
+            apiKey = dict["ApiKey"] as! String
+            print(apiKey)
+        }
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
