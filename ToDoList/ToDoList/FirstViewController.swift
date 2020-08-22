@@ -12,20 +12,31 @@ class FirstViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
 
+    var items = [String]()
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadData()
+    }
+
+    private func loadData() {
+        if let currentItems = UserDefaults.standard.stringArray(forKey: "items") {
+            items = currentItems
+        }
+
+        tableView.reloadData()
     }
 }
 
 extension FirstViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return items.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
-        cell.textLabel?.text = "Item \(indexPath.row)"
+        cell.textLabel?.text = items[indexPath.row]
         return cell
     }
 }

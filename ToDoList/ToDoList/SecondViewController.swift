@@ -17,5 +17,15 @@ class SecondViewController: UIViewController {
     }
 
     @IBAction func btnAddTapped(_ sender: Any) {
+        var items = [String]()
+
+        if let currentItems = UserDefaults.standard.stringArray(forKey: "items") {
+            items = currentItems
+        }
+
+        items.append(txtItem.text!)
+        txtItem.text = ""
+
+        UserDefaults.standard.set(items, forKey: "items")
     }
 }
