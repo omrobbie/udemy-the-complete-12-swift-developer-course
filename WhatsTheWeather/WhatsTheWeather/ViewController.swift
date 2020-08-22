@@ -10,7 +10,13 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var txtCity: UITextField!
+    @IBOutlet weak var lblResult: UILabel!
+
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+
+    @IBAction func btnSubmitTapped(_ sender: Any) {
     }
 }
