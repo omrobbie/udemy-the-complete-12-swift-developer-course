@@ -8,12 +8,21 @@
 
 import UIKit
 
-class SecondViewController: UIViewController {
+class SecondViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var txtItem: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        txtItem.resignFirstResponder()
+        return true
     }
 
     @IBAction func btnAddTapped(_ sender: Any) {
