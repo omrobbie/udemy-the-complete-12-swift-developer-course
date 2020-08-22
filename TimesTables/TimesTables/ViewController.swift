@@ -18,19 +18,19 @@ class ViewController: UIViewController {
     }
 
     @IBAction func sliderChange(_ sender: Any) {
-        print(slider.value)
+        tableView.reloadData()
     }
 }
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return 50
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
-        cell.textLabel?.text = "Item \(indexPath.row)"
+        cell.textLabel?.text = String(Int(slider.value * 20) * (indexPath.row + 1))
         return cell
     }
 }
