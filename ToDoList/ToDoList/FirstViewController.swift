@@ -19,6 +19,11 @@ class FirstViewController: UIViewController {
         loadData()
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        loadData()
+    }
+
     private func loadData() {
         if let currentItems = UserDefaults.standard.stringArray(forKey: "items") {
             items = currentItems
