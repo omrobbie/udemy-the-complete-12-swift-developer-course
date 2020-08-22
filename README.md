@@ -36,3 +36,8 @@ Learn about UserDefaults, Tab Bar.<br>
 ### 7. Web Content
 Learn about Web View, WebKit.<br>
 <img src="WebContent/screenshot/preview.png" width=256 />&nbsp;
+
+### 8. Whats The Weather?
+Learn about URLSession, JSONSerialization.<br>
+<img src="WhatsTheWeather/screenshot/preview1.png" width=256 />&nbsp;
+<img src="WhatsTheWeather/screenshot/preview2.png" width=256 />&nbsp;
