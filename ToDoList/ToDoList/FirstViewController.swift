@@ -44,4 +44,8 @@ extension FirstViewController: UITableViewDelegate, UITableViewDataSource {
         cell.textLabel?.text = items[indexPath.row]
         return cell
     }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
 }
