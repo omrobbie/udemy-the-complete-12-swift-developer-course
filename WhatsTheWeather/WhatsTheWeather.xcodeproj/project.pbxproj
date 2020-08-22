@@ -13,6 +13,7 @@
 		FC6D896624F1643D00185C30 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC6D896424F1643D00185C30 /* Main.storyboard */; };
 		FC6D896824F1643D00185C30 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC6D896724F1643D00185C30 /* Assets.xcassets */; };
 		FC6D896B24F1643D00185C30 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC6D896924F1643D00185C30 /* LaunchScreen.storyboard */; };
+		FC6D897324F16AEC00185C30 /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = FC6D897224F16AEC00185C30 /* Keys.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		FC6D896724F1643D00185C30 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FC6D896A24F1643D00185C30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FC6D896C24F1643D00185C30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FC6D897224F16AEC00185C30 /* Keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				FC6D896724F1643D00185C30 /* Assets.xcassets */,
 				FC6D896924F1643D00185C30 /* LaunchScreen.storyboard */,
 				FC6D896C24F1643D00185C30 /* Info.plist */,
+				FC6D897224F16AEC00185C30 /* Keys.plist */,
 			);
 			path = WhatsTheWeather;
 			sourceTree = "<group>";
@@ -125,6 +128,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC6D897324F16AEC00185C30 /* Keys.plist in Resources */,
 				FC6D896B24F1643D00185C30 /* LaunchScreen.storyboard in Resources */,
 				FC6D896824F1643D00185C30 /* Assets.xcassets in Resources */,
 				FC6D896624F1643D00185C30 /* Main.storyboard in Resources */,
