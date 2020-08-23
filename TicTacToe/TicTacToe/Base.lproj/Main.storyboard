@@ -28,103 +28,94 @@
                                     <constraint firstAttribute="height" constant="414" id="Mm1-Ax-sqX"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T11-Li-bIi">
-                                <rect key="frame" x="152" y="241" width="110" height="110"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="110" id="dAv-D0-OIS"/>
-                                    <constraint firstAttribute="height" constant="110" id="dgW-V7-yW1"/>
-                                </constraints>
-                                <state key="normal" image="cross"/>
-                                <connections>
-                                    <action selector="btnCellTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EsM-ix-EHO"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bIk-IJ-3nC">
-                                <rect key="frame" x="152" y="383" width="110" height="110"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="110" id="DFg-ra-gLn"/>
-                                    <constraint firstAttribute="width" constant="110" id="u8r-eF-1bK"/>
-                                </constraints>
-                                <state key="normal" image="nought"/>
-                                <connections>
-                                    <action selector="btnCellTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ggb-dA-kRz"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DFV-dv-sSt">
-                                <rect key="frame" x="152" y="525" width="110" height="110"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="110" id="CyH-b7-ncG"/>
-                                    <constraint firstAttribute="width" constant="110" id="PJ7-nS-YMZ"/>
-                                </constraints>
-                                <state key="normal" image="cross"/>
-                                <connections>
-                                    <action selector="btnCellTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CFd-lG-bb5"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dKY-gG-4Ct">
-                                <rect key="frame" x="284" y="241" width="110" height="110"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="110" id="3q5-LK-aC2"/>
-                                    <constraint firstAttribute="height" constant="110" id="Hs7-77-Y0K"/>
-                                </constraints>
-                                <state key="normal" image="cross"/>
-                                <connections>
-                                    <action selector="btnCellTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="y4z-rY-R1j"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qLb-m0-BNh">
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qLb-m0-BNh">
                                 <rect key="frame" x="20" y="241" width="110" height="110"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="110" id="UJI-nj-gtf"/>
                                     <constraint firstAttribute="height" constant="110" id="Ud9-Uw-uoN"/>
                                 </constraints>
-                                <state key="normal" image="cross"/>
                                 <connections>
                                     <action selector="btnCellTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pKJ-zi-YQV"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X3g-dV-yKj">
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T11-Li-bIi">
+                                <rect key="frame" x="152" y="241" width="110" height="110"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="110" id="dAv-D0-OIS"/>
+                                    <constraint firstAttribute="height" constant="110" id="dgW-V7-yW1"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="btnCellTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EsM-ix-EHO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dKY-gG-4Ct">
+                                <rect key="frame" x="284" y="241" width="110" height="110"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="110" id="3q5-LK-aC2"/>
+                                    <constraint firstAttribute="height" constant="110" id="Hs7-77-Y0K"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="btnCellTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="y4z-rY-R1j"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X3g-dV-yKj">
                                 <rect key="frame" x="20" y="383" width="110" height="110"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="110" id="lML-vf-4OA"/>
                                     <constraint firstAttribute="width" constant="110" id="wQC-EQ-0v9"/>
                                 </constraints>
-                                <state key="normal" image="cross"/>
                                 <connections>
                                     <action selector="btnCellTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VNe-RF-NfX"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XQw-np-4JF">
+                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bIk-IJ-3nC">
+                                <rect key="frame" x="152" y="383" width="110" height="110"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="110" id="DFg-ra-gLn"/>
+                                    <constraint firstAttribute="width" constant="110" id="u8r-eF-1bK"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="btnCellTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ggb-dA-kRz"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XQw-np-4JF">
                                 <rect key="frame" x="284" y="383" width="110" height="110"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="110" id="1uG-XY-j2g"/>
                                     <constraint firstAttribute="height" constant="110" id="jFD-80-GfE"/>
                                 </constraints>
-                                <state key="normal" image="cross"/>
                                 <connections>
                                     <action selector="btnCellTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vNL-zX-AHj"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sqU-UY-6Hs">
-                                <rect key="frame" x="284" y="525" width="110" height="110"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="110" id="WeR-bu-BVg"/>
-                                    <constraint firstAttribute="width" constant="110" id="x6F-Xb-1E8"/>
-                                </constraints>
-                                <state key="normal" image="cross"/>
-                                <connections>
-                                    <action selector="btnCellTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gDd-sw-S3i"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l8n-Rn-PVP">
+                            <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l8n-Rn-PVP">
                                 <rect key="frame" x="20" y="525" width="110" height="110"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="110" id="ZHX-mL-Od8"/>
                                     <constraint firstAttribute="width" constant="110" id="uFu-AV-4qO"/>
                                 </constraints>
-                                <state key="normal" image="cross"/>
                                 <connections>
                                     <action selector="btnCellTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wlH-FG-cfZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DFV-dv-sSt">
+                                <rect key="frame" x="152" y="525" width="110" height="110"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="110" id="CyH-b7-ncG"/>
+                                    <constraint firstAttribute="width" constant="110" id="PJ7-nS-YMZ"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="btnCellTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CFd-lG-bb5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sqU-UY-6Hs">
+                                <rect key="frame" x="284" y="525" width="110" height="110"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="110" id="WeR-bu-BVg"/>
+                                    <constraint firstAttribute="width" constant="110" id="x6F-Xb-1E8"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="btnCellTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gDd-sw-S3i"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -163,7 +154,5 @@
     </scenes>
     <resources>
         <image name="board" width="744" height="783"/>
-        <image name="cross" width="214" height="214"/>
-        <image name="nought" width="214" height="214"/>
     </resources>
 </document>
