@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController {
 
     var activePlayer = 1
+    var activeGame = true
     var gameState = [0, 0, 0, 0, 0, 0, 0, 0, 0]
 
     let winState = [
@@ -39,6 +40,15 @@ class ViewController: UIViewController {
             } else {
                 sender.setImage(UIImage(named: "cross"), for: [])
                 activePlayer = 1
+            }
+        }
+
+        for win in winState {
+            if gameState[win[0]] != 0 &&
+                gameState[win[0]] == gameState[win[1]] &&
+                gameState[win[1]] == gameState[win[2]] {
+                activeGame = false
+                print(gameState[win[0]])
             }
         }
     }
