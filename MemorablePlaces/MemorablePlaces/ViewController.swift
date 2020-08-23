@@ -31,7 +31,7 @@ class ViewController: UIViewController {
             places.remove(at: 0)
         }
 
-        places.append(["name": "Taj Mahal", "lat": "27.175277", "lon": "78.042128O"])
+        places.append(["name": "Taj Mahal", "lat": "27.175277", "lon": "78.042128"])
     }
 }
 

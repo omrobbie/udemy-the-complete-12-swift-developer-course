@@ -20,7 +20,24 @@ class MapViewController: UIViewController {
 
     private func loadData() {
         if activePlace < 0 {return}
-        guard let placeName = places[activePlace]["name"] else {return}
-        print(placeName)
+        let place = places[activePlace]
+
+        if let name = place["name"],
+            let lat = place["lat"],
+            let lon = place["lon"] {
+            if let latitude = Double(lat),
+                let longitude = Double(lon) {
+                let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
+                let coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+                let region = MKCoordinateRegion(center: coordinate, span: span)
+
+                let annotation = MKPointAnnotation()
+                annotation.coordinate = coordinate
+                annotation.title = name
+
+                map.setRegion(region, animated: true)
+                map.addAnnotation(annotation)
+            }
+        }
     }
 }
