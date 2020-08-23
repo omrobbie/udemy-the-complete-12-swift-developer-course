@@ -46,3 +46,8 @@ Learn about URLSession, JSONSerialization.<br>
 Learn about AutoLayout, array IBOutlet, UIImage.<br>
 <img src="TicTacToe/screenshot/preview1.png" width=256 />&nbsp;
 <img src="TicTacToe/screenshot/preview2.png" width=256 />&nbsp;
+
+### 10. Location Aware
+Learn about CoreLocation, CLLocationManager, get address information from Geocoder.<br>
+<img src="LocationAware/screenshot/preview1.png" width=256 />&nbsp;
+<img src="LocationAware/screenshot/preview2.png" width=256 />&nbsp;
