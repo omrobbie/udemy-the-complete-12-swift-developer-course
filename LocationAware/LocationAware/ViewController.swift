@@ -43,5 +43,42 @@ extension ViewController: CLLocationManagerDelegate {
         lblCourse.text = String(location.course)
         lblSpeed.text = String(location.speed)
         lblAltitude.text = String(location.altitude)
+
+        CLGeocoder().reverseGeocodeLocation(location) { (placemarks, error) in
+            if let error = error {
+                print("Error: \(error.localizedDescription)")
+                return
+            }
+
+            if let placemark = placemarks?.first {
+                var address = ""
+
+                if let subThoroughfare = placemark.subThoroughfare {
+                    address += subThoroughfare + " "
+                }
+
+                if let thoroughfare = placemark.thoroughfare {
+                    address += thoroughfare + "\n"
+                }
+
+                if let subLocality = placemark.subLocality {
+                    address += subLocality + "\n"
+                }
+
+                if let subAdministrativeArea = placemark.subAdministrativeArea {
+                    address += subAdministrativeArea + "\n"
+                }
+
+                if let postalCode = placemark.postalCode {
+                    address += postalCode + "\n"
+                }
+
+                if let country = placemark.country {
+                    address += country + "\n"
+                }
+
+                self.lblAddress.text = address
+            }
+        }
     }
 }
