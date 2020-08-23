@@ -13,4 +13,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+
+    @IBAction func btnCellTapped(_ sender: Any) {
+        print("Cell Tapped")
+    }
 }
