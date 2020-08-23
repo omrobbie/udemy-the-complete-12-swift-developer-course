@@ -11,18 +11,24 @@ import UIKit
 class ViewController: UIViewController {
 
     var activePlayer = 1
+    var gameState = [0, 0, 0, 0, 0, 0, 0, 0, 0]
 
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 
     @IBAction func btnCellTapped(_ sender: UIButton) {
-        if activePlayer == 1 {
-            sender.setImage(UIImage(named: "nought"), for: [])
-            activePlayer = 2
-        } else {
-            sender.setImage(UIImage(named: "cross"), for: [])
-            activePlayer = 1
+        let pos = sender.tag - 1
+
+        if gameState[pos] == 0 {
+            gameState[pos] = activePlayer
+            if activePlayer == 1 {
+                sender.setImage(UIImage(named: "nought"), for: [])
+                activePlayer = 2
+            } else {
+                sender.setImage(UIImage(named: "cross"), for: [])
+                activePlayer = 1
+            }
         }
     }
 }
