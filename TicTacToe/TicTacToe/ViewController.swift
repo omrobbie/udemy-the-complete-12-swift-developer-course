@@ -10,6 +10,9 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet var btnCell: [UIButton]?
+    @IBOutlet weak var lblWinner: UILabel!
+
     var activePlayer = 1
     var activeGame = true
     var gameState = [0, 0, 0, 0, 0, 0, 0, 0, 0]
@@ -27,6 +30,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        lblWinner.text = ""
     }
 
     @IBAction func btnCellTapped(_ sender: UIButton) {
@@ -48,7 +52,21 @@ class ViewController: UIViewController {
                 gameState[win[0]] == gameState[win[1]] &&
                 gameState[win[1]] == gameState[win[2]] {
                 activeGame = false
-                print(gameState[win[0]])
+
+                let player = gameState[win[0]] == 1 ? "O" : "X"
+                lblWinner.text = "Player \(player) is the Winner!"
+            }
+        }
+    }
+
+    @IBAction func btnPlayAgainTapped(_ sender: Any) {
+        activeGame = true
+        gameState = [0, 0, 0, 0, 0, 0, 0, 0, 0]
+        lblWinner.text = ""
+
+        if let btnCell = btnCell {
+            for btn in btnCell {
+                btn.setImage(nil, for: [])
             }
         }
     }

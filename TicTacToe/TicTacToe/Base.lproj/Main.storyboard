@@ -118,18 +118,35 @@
                                     <action selector="btnCellTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gDd-sw-S3i"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Winner" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w5Y-ph-hIk">
+                                <rect key="frame" x="179.5" y="693" width="55" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aka-5J-86M">
+                                <rect key="frame" x="171.5" y="722" width="71" height="30"/>
+                                <state key="normal" title="Play Again"/>
+                                <connections>
+                                    <action selector="btnPlayAgainTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UcZ-iB-PAY"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="w5Y-ph-hIk" firstAttribute="top" secondItem="mDr-y8-lwF" secondAttribute="bottom" constant="48" id="1Bn-OL-48E"/>
                             <constraint firstItem="XQw-np-4JF" firstAttribute="centerY" secondItem="bIk-IJ-3nC" secondAttribute="centerY" id="2oq-sS-wJM"/>
                             <constraint firstItem="DFV-dv-sSt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4jk-tB-XwT"/>
                             <constraint firstItem="X3g-dV-yKj" firstAttribute="centerX" secondItem="qLb-m0-BNh" secondAttribute="centerX" id="8Uu-KJ-piH"/>
+                            <constraint firstItem="aka-5J-86M" firstAttribute="top" secondItem="w5Y-ph-hIk" secondAttribute="bottom" constant="8" id="8mW-Dc-Rx3"/>
                             <constraint firstItem="mDr-y8-lwF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9Nv-kd-BC0"/>
                             <constraint firstItem="l8n-Rn-PVP" firstAttribute="centerX" secondItem="X3g-dV-yKj" secondAttribute="centerX" id="AYv-i7-JCY"/>
                             <constraint firstItem="l8n-Rn-PVP" firstAttribute="centerY" secondItem="DFV-dv-sSt" secondAttribute="centerY" id="B4r-bd-Tz4"/>
+                            <constraint firstItem="w5Y-ph-hIk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="CzF-C7-hTC"/>
                             <constraint firstItem="dKY-gG-4Ct" firstAttribute="leading" secondItem="T11-Li-bIi" secondAttribute="trailing" constant="22" id="GgB-wa-YaF"/>
                             <constraint firstItem="bIk-IJ-3nC" firstAttribute="top" secondItem="T11-Li-bIi" secondAttribute="bottom" constant="32" id="L7U-VM-J4O"/>
                             <constraint firstItem="X3g-dV-yKj" firstAttribute="centerY" secondItem="bIk-IJ-3nC" secondAttribute="centerY" id="LS0-Iy-rju"/>
+                            <constraint firstItem="aka-5J-86M" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="MHb-5D-R03"/>
                             <constraint firstItem="bIk-IJ-3nC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="RNB-wk-LBj"/>
                             <constraint firstItem="T11-Li-bIi" firstAttribute="top" secondItem="mDr-y8-lwF" secondAttribute="top" constant="10" id="STd-Ym-1b8"/>
                             <constraint firstItem="T11-Li-bIi" firstAttribute="leading" secondItem="qLb-m0-BNh" secondAttribute="trailing" constant="22" id="Ses-6P-wY3"/>
@@ -146,6 +163,18 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="lblWinner" destination="w5Y-ph-hIk" id="Vj7-3m-pm0"/>
+                        <outletCollection property="btnCell" destination="qLb-m0-BNh" collectionClass="NSMutableArray" id="q9O-fU-OJD"/>
+                        <outletCollection property="btnCell" destination="T11-Li-bIi" collectionClass="NSMutableArray" id="CMi-qw-4eQ"/>
+                        <outletCollection property="btnCell" destination="dKY-gG-4Ct" collectionClass="NSMutableArray" id="2iI-Sj-npx"/>
+                        <outletCollection property="btnCell" destination="X3g-dV-yKj" collectionClass="NSMutableArray" id="M8E-Lp-Iju"/>
+                        <outletCollection property="btnCell" destination="bIk-IJ-3nC" collectionClass="NSMutableArray" id="6Bc-Jc-6zo"/>
+                        <outletCollection property="btnCell" destination="XQw-np-4JF" collectionClass="NSMutableArray" id="Ic2-hi-ZYx"/>
+                        <outletCollection property="btnCell" destination="l8n-Rn-PVP" collectionClass="NSMutableArray" id="hQl-SJ-XyO"/>
+                        <outletCollection property="btnCell" destination="DFV-dv-sSt" collectionClass="NSMutableArray" id="8Zl-Hu-dwh"/>
+                        <outletCollection property="btnCell" destination="sqU-UY-6Hs" collectionClass="NSMutableArray" id="MUX-yL-Ktl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
