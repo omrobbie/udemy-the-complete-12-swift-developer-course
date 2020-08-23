@@ -10,11 +10,19 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    var activePlayer = 1
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 
     @IBAction func btnCellTapped(_ sender: UIButton) {
-        print("Cell \(sender.tag) Tapped")
+        if activePlayer == 1 {
+            sender.setImage(UIImage(named: "nought"), for: [])
+            activePlayer = 2
+        } else {
+            sender.setImage(UIImage(named: "cross"), for: [])
+            activePlayer = 1
+        }
     }
 }
