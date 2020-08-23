@@ -36,6 +36,12 @@ class ViewController: UIViewController {
 extension ViewController: CLLocationManagerDelegate {
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        print(locations)
+        guard let location = locations.first else {return}
+
+        lblLatitude.text = String(location.coordinate.latitude)
+        lblLongitude.text = String(location.coordinate.longitude)
+        lblCourse.text = String(location.course)
+        lblSpeed.text = String(location.speed)
+        lblAltitude.text = String(location.altitude)
     }
 }
