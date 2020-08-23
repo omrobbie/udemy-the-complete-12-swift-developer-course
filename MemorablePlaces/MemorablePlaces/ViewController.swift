@@ -9,6 +9,7 @@
 import UIKit
 
 var places = [Dictionary<String, String>()]
+var activePlace = -1
 
 class ViewController: UIViewController {
 
@@ -21,7 +22,7 @@ class ViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        loadData()
+        tableView.reloadData()
     }
 
     private func loadData() {
@@ -30,8 +31,6 @@ class ViewController: UIViewController {
         }
 
         places.append(["name": "Taj Mahal", "lat": "27.175277", "lon": "78.042128O"])
-
-        tableView.reloadData()
     }
 }
 
@@ -46,5 +45,11 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         let item = places[indexPath.row]
         cell.textLabel?.text = item["name"]
         return cell
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        activePlace = indexPath.row
+        performSegue(withIdentifier: "toMap", sender: nil)
     }
 }
