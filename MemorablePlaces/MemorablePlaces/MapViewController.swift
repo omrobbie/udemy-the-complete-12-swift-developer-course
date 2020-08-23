@@ -19,6 +19,7 @@ class MapViewController: UIViewController {
     }
 
     private func loadData() {
+        if activePlace < 0 {return}
         guard let placeName = places[activePlace]["name"] else {return}
         print(placeName)
     }

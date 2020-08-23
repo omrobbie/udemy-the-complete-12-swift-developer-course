@@ -35,6 +35,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="Memorable Places" id="dH3-ik-RpS">
                         <barButtonItem key="backBarButtonItem" title="Back" id="z3C-G4-526"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="OqG-el-SGl">
+                            <connections>
+                                <segue destination="LGF-7b-fqH" kind="show" id="TpL-lw-TSj"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="y9e-UF-dZY" id="p5y-4V-JJ9"/>
@@ -94,4 +99,7 @@
             <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="TpL-lw-TSj"/>
+    </inferredMetricsTieBreakers>
 </document>
