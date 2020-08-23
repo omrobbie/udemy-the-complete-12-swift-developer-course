@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "Johann-Sebastian-Bach.jpg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
