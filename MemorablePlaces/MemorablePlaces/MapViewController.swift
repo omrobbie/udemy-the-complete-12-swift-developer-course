@@ -51,10 +51,35 @@ class MapViewController: UIViewController {
     @objc private func handleLongPress(handle: UIGestureRecognizer) {
         let touchPoint = handle.location(in: map)
         let coordinate = map.convert(touchPoint, toCoordinateFrom: map)
+        let location = CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
 
-        let annotation = MKPointAnnotation()
-        annotation.coordinate = coordinate
-        annotation.title = "You pinned here"
-        map.addAnnotation(annotation)
+        CLGeocoder().reverseGeocodeLocation(location) { (placemarks, error) in
+            if let error = error {
+                print("Error: \(error.localizedDescription)")
+                return
+            }
+
+            guard let placemark = placemarks?.first else {return}
+            var title = ""
+
+            if let subThoroughfare = placemark.subThoroughfare {
+                title += subThoroughfare + " "
+            }
+
+            if let thoroughfare = placemark.thoroughfare {
+                title += thoroughfare
+            }
+
+            if title.isEmpty {
+                title = "Added \(NSDate())"
+            }
+
+            let annotation = MKPointAnnotation()
+            annotation.coordinate = coordinate
+            annotation.title = title
+            self.map.addAnnotation(annotation)
+
+            places.append(["name": title, "lat": String(coordinate.latitude), "lon": String(coordinate.longitude)])
+        }
     }
 }
