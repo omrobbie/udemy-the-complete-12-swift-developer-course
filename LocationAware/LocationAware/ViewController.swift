@@ -11,6 +11,13 @@ import CoreLocation
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var lblLatitude: UILabel!
+    @IBOutlet weak var lblLongitude: UILabel!
+    @IBOutlet weak var lblCourse: UILabel!
+    @IBOutlet weak var lblSpeed: UILabel!
+    @IBOutlet weak var lblAltitude: UILabel!
+    @IBOutlet weak var lblAddress: UILabel!
+
     var locationManager = CLLocationManager()
 
     override func viewDidLoad() {
