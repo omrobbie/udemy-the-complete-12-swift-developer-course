@@ -14,7 +14,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
     }
 
-    @IBAction func btnCellTapped(_ sender: Any) {
-        print("Cell Tapped")
+    @IBAction func btnCellTapped(_ sender: UIButton) {
+        print("Cell \(sender.tag) Tapped")
     }
 }
