@@ -51,3 +51,8 @@ Learn about AutoLayout, array IBOutlet, UIImage.<br>
 Learn about CoreLocation, CLLocationManager, get address information from Geocoder.<br>
 <img src="LocationAware/screenshot/preview1.png" width=256 />&nbsp;
 <img src="LocationAware/screenshot/preview2.png" width=256 />&nbsp;
+
+### 11. Memorable Places
+Learn about CoreLocation, MapKit, add new Annotation with long press on the map.<br>
+<img src="MemorablePlaces/screenshot/preview1.png" width=256 />&nbsp;
+<img src="MemorablePlaces/screenshot/preview2.png" width=256 />&nbsp;
