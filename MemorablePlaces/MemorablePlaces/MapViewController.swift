@@ -16,6 +16,7 @@ class MapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadData()
+        gestureObserver()
     }
 
     private func loadData() {
@@ -39,5 +40,21 @@ class MapViewController: UIViewController {
                 map.addAnnotation(annotation)
             }
         }
+    }
+
+    private func gestureObserver() {
+        let gesture = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress(handle:)))
+        gesture.minimumPressDuration = 2
+        map.addGestureRecognizer(gesture)
+    }
+
+    @objc private func handleLongPress(handle: UIGestureRecognizer) {
+        let touchPoint = handle.location(in: map)
+        let coordinate = map.convert(touchPoint, toCoordinateFrom: map)
+
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = coordinate
+        annotation.title = "You pinned here"
+        map.addAnnotation(annotation)
     }
 }
