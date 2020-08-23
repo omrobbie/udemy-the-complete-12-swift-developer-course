@@ -19,12 +19,19 @@ class ViewController: UIViewController {
         loadData()
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        loadData()
+    }
+
     private func loadData() {
         if places[0].count == 0 {
             places.remove(at: 0)
         }
 
         places.append(["name": "Taj Mahal", "lat": "27.175277", "lon": "78.042128O"])
+
+        tableView.reloadData()
     }
 }
 
