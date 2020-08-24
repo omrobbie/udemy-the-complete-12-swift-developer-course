@@ -20,6 +20,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCoreData()
+        loadData()
     }
 
     private func setupCoreData() {
@@ -38,9 +39,31 @@ class ViewController: UIViewController {
 
         do {
             try context.save()
-            loginView.isHidden = true
-            lblWelcomeMessage.text = "Welcome back,\n\(txtUserName.text!)"
-            txtUserName.resignFirstResponder()
+            loadData()
+        } catch {
+            print("Error", error.localizedDescription)
+        }
+    }
+
+    private func loadData() {
+        guard let context = context else {
+            print("Error: Doesn't have view context!")
+            return
+        }
+
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
+        request.returnsDistinctResults = false
+
+        do {
+            let results = try context.fetch(request)
+
+            for result in results as! [NSManagedObject] {
+                if let username = result.value(forKey: "name") {
+                    loginView.isHidden = true
+                    lblWelcomeMessage.text = "Welcome back,\n\(username)"
+                    txtUserName.resignFirstResponder()
+                }
+            }
         } catch {
             print("Error", error.localizedDescription)
         }
