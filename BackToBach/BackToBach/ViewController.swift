@@ -16,7 +16,6 @@ class ViewController: UIViewController {
 
     private let audioPath = Bundle.main.path(forResource: "song", ofType: "mp3")
     private var player = AVAudioPlayer()
-    private var timer = Timer()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,24 +27,27 @@ class ViewController: UIViewController {
 
         do {
             try player = AVAudioPlayer(contentsOf: URL(fileURLWithPath: audioPath))
-            print(player.url)
         } catch {
             print("Error", error.localizedDescription)
         }
     }
 
     @IBAction func sliderVolumeChanged(_ sender: Any) {
+        player.volume = sliderVolume.value
     }
 
     @IBAction func sliderScrubberChanged(_ sender: Any) {
     }
 
     @IBAction func btnPlayTapped(_ sender: Any) {
+        player.play()
     }
 
     @IBAction func btnPauseTapped(_ sender: Any) {
+        player.pause()
     }
 
     @IBAction func btnStopTapped(_ sender: Any) {
+        player.stop()
     }
 }
