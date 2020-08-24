@@ -13,7 +13,9 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
 
-    var centralManager: CBCentralManager?
+    private var centralManager: CBCentralManager?
+    private var names: [String] = []
+    private var rssi: [String] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,13 +30,13 @@ class ViewController: UIViewController {
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return names.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .subtitle, reuseIdentifier: nil)
-        cell.textLabel?.text = "Item \(indexPath.row)"
-        cell.detailTextLabel?.text = "RSSI:"
+        cell.textLabel?.text = names[indexPath.row]
+        cell.detailTextLabel?.text = "RSSI: \(rssi[indexPath.row])"
         return cell
     }
 }
@@ -48,10 +50,18 @@ extension ViewController: CBCentralManagerDelegate {
     }
 
     func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
-        print(peripheral.name)
-        print(peripheral.identifier.uuidString)
-        print(peripheral.rssi)
-        print(advertisementData)
-        print("*****************")
+        if let name = peripheral.name {
+            if !names.contains(name) {
+                names.append(name)
+            }
+        } else {
+            if !names.contains(peripheral.identifier.uuidString) {
+                names.append(peripheral.identifier.uuidString)
+            }
+        }
+
+        peripheral.readRSSI()
+        rssi.append(RSSI.stringValue)
+        tableView.reloadData()
     }
 }
