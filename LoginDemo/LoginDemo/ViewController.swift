@@ -10,7 +10,14 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var loginView: UIView!
+    @IBOutlet weak var txtUserName: UITextField!
+    @IBOutlet weak var lblWelcomeMessage: UILabel!
+
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+
+    @IBAction func btnSubmitTapped(_ sender: Any) {
     }
 }
