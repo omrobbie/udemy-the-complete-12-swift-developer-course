@@ -60,3 +60,9 @@ Learn about CoreLocation, MapKit, add new Annotation with long press on the map.
 ### 12. Back to Bach
 Learn about AVFoundation.<br>
 <img src="BackToBach/screenshot/preview.png" width=256 />&nbsp;
+
+### 13. Shake and Swipe Example
+Learn about Motion Detection (shake), SwipeGestureRecognizer (swipe left and right).<br>
+<img src="ShakeAndSwipeExample/screenshot/preview1.png" width=256 />&nbsp;
+<img src="ShakeAndSwipeExample/screenshot/preview2.png" width=256 />&nbsp;
+<img src="ShakeAndSwipeExample/screenshot/preview3.png" width=256 />&nbsp;
