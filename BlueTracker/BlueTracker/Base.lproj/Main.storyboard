@@ -33,7 +33,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Blue Tracker" id="eHb-RM-V9u"/>
+                    <navigationItem key="navigationItem" title="Blue Tracker" id="eHb-RM-V9u">
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="afV-Um-DWY">
+                            <connections>
+                                <action selector="btnReloadTapped:" destination="BYZ-38-t0r" id="f2b-IL-JUN"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="gwd-NU-kQJ" id="6mS-no-tIY"/>
                     </connections>

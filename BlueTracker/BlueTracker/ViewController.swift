@@ -35,6 +35,18 @@ class ViewController: UIViewController {
         centralManager?.stopScan()
         centralManager?.scanForPeripherals(withServices: nil, options: nil)
     }
+
+    private func startTimer() {
+        timer.invalidate()
+        timer = Timer.scheduledTimer(withTimeInterval: 10, repeats: true, block: { (_) in
+            self.startScan()
+        })
+    }
+
+    @IBAction func btnReloadTapped(_ sender: Any) {
+        startScan()
+        startTimer()
+    }
 }
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
@@ -55,9 +67,8 @@ extension ViewController: CBCentralManagerDelegate {
 
     func centralManagerDidUpdateState(_ central: CBCentralManager) {
         if central.state == .poweredOn {
-            timer = Timer.scheduledTimer(withTimeInterval: 10, repeats: true, block: { (_) in
-                self.startScan()
-            })
+            startTimer()
+            startTimer()
         }
     }
 
