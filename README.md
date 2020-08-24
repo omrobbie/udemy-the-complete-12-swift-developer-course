@@ -71,3 +71,7 @@ Learn about Motion Detection (shake), SwipeGestureRecognizer (swipe left and rig
 Learn how to save and load data from CoreData.<br>
 <img src="LoginDemo/screenshot/preview1.png" width=256 />&nbsp;
 <img src="LoginDemo/screenshot/preview2.png" width=256 />&nbsp;
+
+### 15. Blue Tracker
+Learn abou CoreBluetooth, scan for peripheral.<br>
+<img src="BlueTracker/screenshot/preview.png" width=256 />&nbsp;
