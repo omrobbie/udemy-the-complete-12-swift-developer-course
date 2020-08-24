@@ -43,7 +43,15 @@ extension ViewController: CBCentralManagerDelegate {
 
     func centralManagerDidUpdateState(_ central: CBCentralManager) {
         if central.state == .poweredOn {
-            
+            central.scanForPeripherals(withServices: nil, options: nil)
         }
+    }
+
+    func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
+        print(peripheral.name)
+        print(peripheral.identifier.uuidString)
+        print(peripheral.rssi)
+        print(advertisementData)
+        print("*****************")
     }
 }
