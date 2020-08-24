@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class ViewController: UIViewController {
 
@@ -14,8 +15,16 @@ class ViewController: UIViewController {
     @IBOutlet weak var txtUserName: UITextField!
     @IBOutlet weak var lblWelcomeMessage: UILabel!
 
+    private var context: NSManagedObjectContext?
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupCoreData()
+    }
+
+    private func setupCoreData() {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        context = appDelegate.persistentContainer.viewContext
     }
 
     @IBAction func btnSubmitTapped(_ sender: Any) {
