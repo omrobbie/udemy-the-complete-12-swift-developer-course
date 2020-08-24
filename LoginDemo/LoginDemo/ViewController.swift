@@ -27,6 +27,26 @@ class ViewController: UIViewController {
         context = appDelegate.persistentContainer.viewContext
     }
 
+    private func saveData() {
+        guard let context = context else {
+            print("Error: Doesn't have view context!")
+            return
+        }
+
+        let newValue = NSEntityDescription.insertNewObject(forEntityName: "User", into: context)
+        newValue.setValue(txtUserName.text, forKey: "name")
+
+        do {
+            try context.save()
+            loginView.isHidden = true
+            lblWelcomeMessage.text = "Welcome back,\n\(txtUserName.text!)"
+            txtUserName.resignFirstResponder()
+        } catch {
+            print("Error", error.localizedDescription)
+        }
+    }
+
     @IBAction func btnSubmitTapped(_ sender: Any) {
+        saveData()
     }
 }
