@@ -10,6 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var lblTitle: UILabel!
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
