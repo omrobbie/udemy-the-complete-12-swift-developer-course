@@ -17,6 +17,8 @@ class ViewController: UIViewController {
     private var names: [String] = []
     private var rssi: [String] = []
 
+    private var timer = Timer()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupBluetooth()
@@ -24,6 +26,14 @@ class ViewController: UIViewController {
 
     private func setupBluetooth() {
         centralManager = CBCentralManager(delegate: self, queue: nil)
+    }
+
+    private func startScan() {
+        names = []
+        rssi = []
+        tableView.reloadData()
+        centralManager?.stopScan()
+        centralManager?.scanForPeripherals(withServices: nil, options: nil)
     }
 }
 
@@ -45,7 +55,9 @@ extension ViewController: CBCentralManagerDelegate {
 
     func centralManagerDidUpdateState(_ central: CBCentralManager) {
         if central.state == .poweredOn {
-            central.scanForPeripherals(withServices: nil, options: nil)
+            timer = Timer.scheduledTimer(withTimeInterval: 10, repeats: true, block: { (_) in
+                self.startScan()
+            })
         }
     }
 
