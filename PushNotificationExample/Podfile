@@ -7,5 +7,6 @@ target 'PushNotificationExample' do
 
   # Pods for PushNotificationExample
   pod 'Firebase'
+  pod 'Firebase/Messaging'
 
 end
