@@ -11,6 +11,10 @@ import Cocoa
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
+    func applicationDidFinishLaunching(_ notification: Notification) {
+        NSApp.keyWindow?.contentMinSize = NSSize(width: 600, height: 300)
+    }
+
     lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "Time_Ticker")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
