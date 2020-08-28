@@ -159,5 +159,10 @@ class InterfaceController: WKInterfaceController {
     }
 
     @IBAction func mnResetTapped() {
+        standard.set(nil, forKey: keyClockedIn)
+        standard.set(nil, forKey: keyClockedIns)
+        standard.set(nil, forKey: keyClockedOuts)
+        clockedIn = false
+        updateView()
     }
 }
