@@ -942,6 +942,7 @@
                         <outlet property="lblInOut" destination="HKx-dI-i2y" id="Xxx-Nb-cTI"/>
                         <outlet property="lblRemaining" destination="wpm-xR-9Ht" id="SvC-jo-Ou9"/>
                         <outlet property="lblTitle" destination="ahN-Ca-kKF" id="bT1-5r-WUQ"/>
+                        <outlet property="progressIndicator" destination="CQY-6R-uDT" id="AOs-5C-hmc"/>
                         <outlet property="tableView" destination="sTp-4U-EtU" id="YLb-Ic-liy"/>
                     </connections>
                 </viewController>

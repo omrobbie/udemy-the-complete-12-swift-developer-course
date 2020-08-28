@@ -16,6 +16,7 @@ class ViewController: NSViewController {
     @IBOutlet weak var btnInOut: NSButton!
     @IBOutlet weak var lblInOut: NSTextField!
     @IBOutlet weak var tableView: NSTableView!
+    @IBOutlet weak var progressIndicator: NSProgressIndicator!
 
     private var currentPeriod: Period?
     private var timer: Timer?
@@ -55,6 +56,11 @@ class ViewController: NSViewController {
             lblInOut.isHidden = false
             lblInOut.stringValue = "Currently: \(currentPeriod!.currentlyPeriod())"
         }
+
+        lblRemaining.stringValue = remainingTimeAsString()
+
+        let ratio = totalTimeInterval() / goalTimeInterval()
+        progressIndicator.doubleValue = ratio
     }
 
     private func getPeriods() {
@@ -84,6 +90,33 @@ class ViewController: NSViewController {
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (_) in
             self.updateView()
         })
+    }
+
+    private func totalTimeInterval() -> TimeInterval {
+        var time = 0.0
+
+        for period in periods {
+            time += period.time()
+        }
+
+        if let currentPeriod = self.currentPeriod {
+            time += currentPeriod.time()
+        }
+
+        return time
+    }
+
+    private func goalTimeInterval() -> TimeInterval {
+        return Double(btnGoalTime.indexOfSelectedItem + 1) * 60 * 60
+    }
+
+    private func remainingTimeAsString() -> String {
+        let remainingTime = goalTimeInterval() - totalTimeInterval()
+
+        if remainingTime <= 0 {
+            return "Finished!"
+        }
+        return ""
     }
 
     @IBAction func btnGoalTimeChanged(_ sender: Any) {
