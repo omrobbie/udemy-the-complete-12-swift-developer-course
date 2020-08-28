@@ -62,7 +62,7 @@ class InterfaceController: WKInterfaceController {
     private func updateView() {
         if clockedIn {
             lblDateSmall.setHidden(false)
-            lblDateSmall.setText("Today: 3h 44m")
+            lblDateSmall.setText("Today: \(totalTimeWorkedAsString())")
             lblDateLarge.setText("")
             btnInOut.setTitle("Clock-Out")
             btnInOut.setBackgroundColor(.red)
@@ -90,7 +90,7 @@ class InterfaceController: WKInterfaceController {
         } else {
             lblDateSmall.setHidden(true)
             lblDateSmall.setText("")
-            lblDateLarge.setText("Today\n3h 44m")
+            lblDateLarge.setText("Today\n\(totalTimeWorkedAsString())")
             btnInOut.setTitle("Clock-Out")
             btnInOut.setBackgroundColor(.green)
         }
