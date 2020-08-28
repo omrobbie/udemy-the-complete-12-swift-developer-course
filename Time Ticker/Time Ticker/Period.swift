@@ -59,4 +59,16 @@ extension Period {
         }
         return "Error formating out date"
     }
+
+    func time() -> TimeInterval {
+        if let inDate = inDate {
+            if let outDate = self.outDate {
+                return outDate.timeIntervalSince(inDate)
+            } else {
+                return Date().timeIntervalSince(inDate)
+            }
+        }
+
+        return 0.0
+    }
 }
