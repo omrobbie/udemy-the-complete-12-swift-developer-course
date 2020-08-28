@@ -16,11 +16,33 @@ class InterfaceController: WKInterfaceController {
     @IBOutlet weak var lblDateLarge: WKInterfaceLabel!
     @IBOutlet weak var btnInOut: WKInterfaceButton!
 
+    private var clockedIn = false
+
     override func willActivate() {
         super.willActivate()
     }
 
+    private func clockIn() {
+
+    }
+
+    private func clockOut() {
+
+    }
+
+    private func updateView() {
+
+    }
+
     @IBAction func btnInOutTapped() {
+        if clockedIn {
+            clockOut()
+        } else {
+            clockIn()
+        }
+
+        clockedIn.toggle()
+        updateView()
     }
 
     @IBAction func mnHistoryTapped() {
