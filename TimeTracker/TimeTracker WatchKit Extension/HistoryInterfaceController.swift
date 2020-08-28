@@ -12,9 +12,12 @@ class HistoryInterfaceController: WKInterfaceController {
 
     @IBOutlet weak var table: WKInterfaceTable!
 
+    private var clockIns = [Date]()
+    private var clockOuts = [Date]()
+
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
-        loadDataDummy()
+        loadData()
     }
 
     private func loadDataDummy() {
@@ -26,6 +29,16 @@ class HistoryInterfaceController: WKInterfaceController {
             if let rowController = table.rowController(at: i) as? HistoryRow {
                 rowController.label.setText("Item \(i)")
             }
+        }
+    }
+
+    private func loadData() {
+        if let clockIns = standard.array(forKey: keyClockedIns) as? [Date] {
+            self.clockIns = clockIns
+        }
+
+        if let clockOuts = standard.array(forKey: keyClockedOuts) as? [Date] {
+            self.clockOuts = clockOuts
         }
     }
 }
