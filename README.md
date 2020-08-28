@@ -80,3 +80,8 @@ Learn about CoreBluetooth, scan for peripheral.<br>
 Learn how to do remote push notification using Firebase Cloud Messaging and display it to device using UNNotificationCenter.<br>
 <img src="PushNotificationExample/screenshot/preview1.png" width=512 />&nbsp;
 <img src="PushNotificationExample/screenshot/preview2.png" width=256 />&nbsp;
+
+### 17. Time Ticker
+Learn how to make MacOS app.<br>
+<img src="Time%20Ticker/screenshot/preview1.png" width=512 />&nbsp;
+<img src="Time%20Ticker/screenshot/preview2.png" width=512 />&nbsp;
