@@ -21,7 +21,7 @@ func getCurrentClockInString(date1: Date, date2: Date) -> String {
     }
 
     if minutes != 0 || hours != 0 {
-        currentClockInString += "\(minutes)m\n"
+        currentClockInString += "\(minutes)m "
     }
 
     currentClockInString += "\(seconds)s"

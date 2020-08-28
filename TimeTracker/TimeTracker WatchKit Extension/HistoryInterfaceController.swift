@@ -40,5 +40,13 @@ class HistoryInterfaceController: WKInterfaceController {
         if let clockOuts = standard.array(forKey: keyClockedOuts) as? [Date] {
             self.clockOuts = clockOuts
         }
+
+        table.setNumberOfRows(clockIns.count, withRowType: "row")
+
+        for i in 0..<clockIns.count {
+            if let rowController = table.rowController(at: i) as? HistoryRow {
+                rowController.label.setText(getCurrentClockInString(date1: clockOuts[i], date2: clockIns[i]))
+            }
+        }
     }
 }

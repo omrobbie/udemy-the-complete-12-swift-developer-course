@@ -26,7 +26,7 @@ class InterfaceController: WKInterfaceController {
     }
 
     private func clockIn() {
-        standard.set(Date(timeIntervalSinceNow: -5000), forKey: keyClockedIn)
+        standard.set(Date(), forKey: keyClockedIn)
         standard.synchronize()
     }
 
