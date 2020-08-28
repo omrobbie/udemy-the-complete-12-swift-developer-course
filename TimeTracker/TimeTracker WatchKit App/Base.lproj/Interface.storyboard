@@ -22,6 +22,12 @@
                         </label>
                         <separator alignment="center" verticalAlignment="center" alpha="0.0" id="lMH-fI-N41"/>
                     </items>
+                    <menu key="menu" id="YPA-BD-D7u">
+                        <items>
+                            <menuItem title="History" icon="info" id="vQp-pE-LBd"/>
+                            <menuItem title="Reset All" icon="trash" id="LPh-bz-JRa"/>
+                        </items>
+                    </menu>
                 </controller>
             </objects>
             <point key="canvasLocation" x="35" y="30"/>
