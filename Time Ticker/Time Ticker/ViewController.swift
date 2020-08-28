@@ -18,12 +18,14 @@ class ViewController: NSViewController {
 
     private var currentPeriod: Period?
     private var timer: Timer?
+    private var periods = [Period]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         btnGoalTime.removeAllItems()
         btnGoalTime.addItems(withTitles: titles())
-        updateView()
+
+        getPeriods()
     }
 
     private func titles() -> [String] {
@@ -51,6 +53,34 @@ class ViewController: NSViewController {
         }
     }
 
+    private func getPeriods() {
+        if let context = (NSApp.delegate as? AppDelegate)?.persistentContainer.viewContext {
+            if let name = Period.entity().name {
+                let fetchRequest = NSFetchRequest<Period>(entityName: name)
+                fetchRequest.sortDescriptors = [NSSortDescriptor(key: "outDate", ascending: false)]
+
+                if let periods = try? context.fetch(fetchRequest) {
+                    self.periods = periods
+
+                    for period in periods {
+                        if period.outDate == nil {
+                            currentPeriod = period
+                            startTimer()
+                        }
+                    }
+                }
+            }
+        }
+
+        updateView()
+    }
+
+    private func startTimer() {
+        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (_) in
+            self.updateView()
+        })
+    }
+
     @IBAction func btnGoalTimeChanged(_ sender: Any) {
         updateView()
     }
@@ -63,9 +93,7 @@ class ViewController: NSViewController {
                 currentPeriod?.inDate = Date(timeIntervalSinceNow: -1404)
             }
 
-            timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (_) in
-                self.updateView()
-            })
+            startTimer()
         } else {
             // check out
             currentPeriod!.outDate = Date()
