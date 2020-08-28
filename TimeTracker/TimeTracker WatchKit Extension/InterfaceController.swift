@@ -12,15 +12,20 @@ import Foundation
 
 class InterfaceController: WKInterfaceController {
 
-    override func awake(withContext context: Any?) {
-        super.awake(withContext: context)
-    }
-    
+    @IBOutlet weak var lblDateSmall: WKInterfaceLabel!
+    @IBOutlet weak var lblDateLarge: WKInterfaceLabel!
+    @IBOutlet weak var btnInOut: WKInterfaceButton!
+
     override func willActivate() {
         super.willActivate()
     }
-    
-    override func didDeactivate() {
-        super.didDeactivate()
+
+    @IBAction func btnInOutTapped() {
+    }
+
+    @IBAction func mnHistoryTapped() {
+    }
+
+    @IBAction func mnResetTapped() {
     }
 }

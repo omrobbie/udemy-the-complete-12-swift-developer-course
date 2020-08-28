@@ -11,7 +11,11 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="TimeTracker_WatchKit_App" customModuleProvider="target">
                     <items>
-                        <button width="1" alignment="center" verticalAlignment="bottom" title="Clock-In" id="7HD-No-nEW"/>
+                        <button width="1" alignment="center" verticalAlignment="bottom" title="Clock-In" id="7HD-No-nEW">
+                            <connections>
+                                <action selector="btnInOutTapped" destination="AgC-eL-Hgc" id="6y4-Cb-t3n"/>
+                            </connections>
+                        </button>
                         <label alignment="left" text="Today: 3h 44m" id="pI1-qZ-XVh">
                             <fontDescription key="font" type="system" pointSize="12"/>
                         </label>
@@ -24,10 +28,23 @@
                     </items>
                     <menu key="menu" id="YPA-BD-D7u">
                         <items>
-                            <menuItem title="History" icon="info" id="vQp-pE-LBd"/>
-                            <menuItem title="Reset All" icon="trash" id="LPh-bz-JRa"/>
+                            <menuItem title="History" icon="info" id="vQp-pE-LBd">
+                                <connections>
+                                    <action selector="mnHistoryTapped" destination="AgC-eL-Hgc" id="UVR-ns-U7U"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Reset All" icon="trash" id="LPh-bz-JRa">
+                                <connections>
+                                    <action selector="mnResetTapped" destination="AgC-eL-Hgc" id="Moc-0C-fw9"/>
+                                </connections>
+                            </menuItem>
                         </items>
                     </menu>
+                    <connections>
+                        <outlet property="btnInOut" destination="7HD-No-nEW" id="FUX-em-Daw"/>
+                        <outlet property="lblDateLarge" destination="A2N-Dd-wsh" id="y8q-Yd-Uq2"/>
+                        <outlet property="lblDateSmall" destination="pI1-qZ-XVh" id="zIY-wn-4xF"/>
+                    </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="35" y="30"/>
