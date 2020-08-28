@@ -145,6 +145,21 @@ class ViewController: NSViewController {
         updateView()
         (NSApp.delegate as? AppDelegate)?.saveAction(nil)
     }
+
+    @IBAction func btnResetTapped(_ sender: Any) {
+        if let context = (NSApp.delegate as? AppDelegate)?.persistentContainer.viewContext {
+            for period in periods {
+                context.delete(period)
+            }
+
+            if let currentPeriod = self.currentPeriod {
+                context.delete(currentPeriod)
+                self.currentPeriod = nil
+            }
+
+            getPeriods()
+        }
+    }
 }
 
 extension ViewController: NSTableViewDelegate, NSTableViewDataSource {
