@@ -833,6 +833,9 @@
                                                     </items>
                                                 </menu>
                                             </popUpButtonCell>
+                                            <connections>
+                                                <action selector="btnGoalTimeChanged:" target="XfG-lQ-9wD" id="Ire-Lz-43r"/>
+                                            </connections>
                                         </popUpButton>
                                         <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ueg-NZ-1so">
                                             <rect key="frame" x="353" y="-2" width="75" height="32"/>
@@ -918,6 +921,10 @@
                             <constraint firstAttribute="trailing" secondItem="LS5-wL-bBB" secondAttribute="trailing" id="eCW-cc-N24"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="btnGoalTime" destination="Dga-S3-ZTN" id="woI-sd-bcl"/>
+                        <outlet property="lblRemaining" destination="wpm-xR-9Ht" id="SvC-jo-Ou9"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
