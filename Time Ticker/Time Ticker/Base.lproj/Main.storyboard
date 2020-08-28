@@ -726,13 +726,13 @@
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
-                                        <scrollView autohidesScrollers="YES" horizontalLineScroll="42" horizontalPageScroll="10" verticalLineScroll="42" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fsv-ac-l2X">
+                                        <scrollView autohidesScrollers="YES" horizontalLineScroll="52" horizontalPageScroll="10" verticalLineScroll="52" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fsv-ac-l2X">
                                             <rect key="frame" x="0.0" y="0.0" width="240" height="211"/>
                                             <clipView key="contentView" copiesOnScroll="NO" id="yxI-Q3-w83">
                                                 <rect key="frame" x="1" y="0.0" width="238" height="210"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
-                                                    <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="40" rowSizeStyle="automatic" headerView="anT-3Q-dcv" viewBased="YES" id="sTp-4U-EtU">
+                                                    <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="50" headerView="anT-3Q-dcv" viewBased="YES" id="sTp-4U-EtU">
                                                         <rect key="frame" x="0.0" y="0.0" width="238" height="185"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <size key="intercellSpacing" width="3" height="2"/>
@@ -751,7 +751,7 @@
                                                                 </textFieldCell>
                                                                 <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                                 <prototypeCellViews>
-                                                                    <tableCellView id="RA3-Ee-316">
+                                                                    <tableCellView identifier="cell" id="RA3-Ee-316" customClass="PeriodCell" customModule="Time_Ticker" customModuleProvider="target">
                                                                         <rect key="frame" x="1" y="1" width="235" height="40"/>
                                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                         <subviews>
@@ -784,6 +784,8 @@
                                                                             <constraint firstAttribute="trailing" secondItem="mjg-zD-MrF" secondAttribute="trailing" id="zJQ-QF-nCB"/>
                                                                         </constraints>
                                                                         <connections>
+                                                                            <outlet property="lblTimeRange" destination="mjg-zD-MrF" id="rGC-gA-C8k"/>
+                                                                            <outlet property="lblTimeTotal" destination="FQv-Ap-2hj" id="Pad-zu-GTD"/>
                                                                             <outlet property="textField" destination="mjg-zD-MrF" id="C1v-TG-QWC"/>
                                                                         </connections>
                                                                     </tableCellView>
@@ -940,6 +942,7 @@
                         <outlet property="lblInOut" destination="HKx-dI-i2y" id="Xxx-Nb-cTI"/>
                         <outlet property="lblRemaining" destination="wpm-xR-9Ht" id="SvC-jo-Ou9"/>
                         <outlet property="lblTitle" destination="ahN-Ca-kKF" id="bT1-5r-WUQ"/>
+                        <outlet property="tableView" destination="sTp-4U-EtU" id="YLb-Ic-liy"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

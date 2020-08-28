@@ -15,6 +15,7 @@ class ViewController: NSViewController {
     @IBOutlet weak var lblRemaining: NSTextField!
     @IBOutlet weak var btnInOut: NSButton!
     @IBOutlet weak var lblInOut: NSTextField!
+    @IBOutlet weak var tableView: NSTableView!
 
     private var currentPeriod: Period?
     private var timer: Timer?
@@ -22,6 +23,9 @@ class ViewController: NSViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.delegate = self
+        tableView.dataSource = self
+
         btnGoalTime.removeAllItems()
         btnGoalTime.addItems(withTitles: titles())
 
@@ -72,6 +76,7 @@ class ViewController: NSViewController {
             }
         }
 
+        tableView.reloadData()
         updateView()
     }
 
@@ -105,4 +110,22 @@ class ViewController: NSViewController {
         updateView()
         (NSApp.delegate as? AppDelegate)?.saveAction(nil)
     }
+}
+
+extension ViewController: NSTableViewDelegate, NSTableViewDataSource {
+    func numberOfRows(in tableView: NSTableView) -> Int {
+        return periods.count
+    }
+
+    func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
+        let cell = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "cell"), owner: self) as? PeriodCell
+
+        return cell
+    }
+}
+
+class PeriodCell: NSTableCellView {
+
+    @IBOutlet weak var lblTimeRange: NSTextField!
+    @IBOutlet weak var lblTimeTotal: NSTextField!
 }
