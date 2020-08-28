@@ -14,7 +14,7 @@ extension Period {
             return stringFromDates(date1: inDate, date2: Date())
         }
 
-        return "Error!"
+        return "Error get current period"
     }
 
     func stringFromDates(date1: Date, date2: Date) -> String {
@@ -25,7 +25,7 @@ extension Period {
             let minute = cal.minute,
             let second = cal.second
             else {
-                return "Error!"
+                return "Error get date components"
         }
 
         if hour > 0 {
@@ -38,5 +38,25 @@ extension Period {
         theString += "\(second)s"
 
         return theString
+    }
+
+    func prettyDate(date: Date) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "h:mma"
+        return formatter.string(from: date)
+    }
+
+    func prettyInDate() -> String {
+        if let inDate = inDate {
+            return prettyDate(date: inDate)
+        }
+        return "Error formating in date"
+    }
+
+    func prettyOutDate() -> String {
+        if let outDate = outDate {
+            return prettyDate(date: outDate)
+        }
+        return "Error formating out date"
     }
 }

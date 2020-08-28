@@ -119,7 +119,9 @@ extension ViewController: NSTableViewDelegate, NSTableViewDataSource {
 
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
         let cell = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "cell"), owner: self) as? PeriodCell
-
+        let period = periods[row]
+        cell?.lblTimeRange.stringValue = ""
+        cell?.lblTimeTotal.stringValue = ""
         return cell
     }
 }
