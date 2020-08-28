@@ -11,12 +11,14 @@ import Cocoa
 class ViewController: NSViewController {
 
     @IBOutlet weak var btnGoalTime: NSPopUpButton!
+    @IBOutlet weak var lblTitle: NSTextField!
     @IBOutlet weak var lblRemaining: NSTextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         btnGoalTime.removeAllItems()
         btnGoalTime.addItems(withTitles: titles())
+        updateView()
     }
 
     private func titles() -> [String] {
@@ -31,7 +33,7 @@ class ViewController: NSViewController {
 
     private func updateView() {
         let goalTime = btnGoalTime.indexOfSelectedItem + 1
-        lblRemaining.stringValue = "Goal: \(goalTime) Hour\(goalTime == 1 ? "" : "s")"
+        lblTitle.stringValue = "Goal: \(goalTime) Hour\(goalTime == 1 ? "" : "s")"
     }
 
     @IBAction func btnGoalTimeChanged(_ sender: Any) {

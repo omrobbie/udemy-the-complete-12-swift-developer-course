@@ -924,6 +924,7 @@
                     <connections>
                         <outlet property="btnGoalTime" destination="Dga-S3-ZTN" id="woI-sd-bcl"/>
                         <outlet property="lblRemaining" destination="wpm-xR-9Ht" id="SvC-jo-Ou9"/>
+                        <outlet property="lblTitle" destination="ahN-Ca-kKF" id="bT1-5r-WUQ"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
