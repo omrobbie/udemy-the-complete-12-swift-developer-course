@@ -63,23 +63,7 @@ class InterfaceController: WKInterfaceController {
             btnInOut.setBackgroundColor(.red)
 
             if let clockedInDate = standard.value(forKey: keyClockedIn) as? Date {
-                let timeInterval = Int(Date().timeIntervalSince(clockedInDate))
-                let hours = timeInterval / 3600
-                let minutes = (timeInterval % 3600) / 60
-                let seconds = timeInterval % 60
-
-                var currentClockInString = ""
-
-                if hours != 0 {
-                    currentClockInString += "\(hours)h "
-                }
-
-                if minutes != 0 || hours != 0 {
-                    currentClockInString += "\(minutes)m\n"
-                }
-
-                currentClockInString += "\(seconds)s"
-                lblDateLarge.setText(currentClockInString)
+                lblDateLarge.setText(getCurrentClockInString(date1: Date(), date2: clockedInDate))
                 startTimer()
             }
         } else {
