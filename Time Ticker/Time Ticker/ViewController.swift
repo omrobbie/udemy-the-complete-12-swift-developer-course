@@ -13,6 +13,8 @@ class ViewController: NSViewController {
     @IBOutlet weak var btnGoalTime: NSPopUpButton!
     @IBOutlet weak var lblTitle: NSTextField!
     @IBOutlet weak var lblRemaining: NSTextField!
+    @IBOutlet weak var btnInOut: NSButton!
+    @IBOutlet weak var lblInOut: NSTextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,5 +40,8 @@ class ViewController: NSViewController {
 
     @IBAction func btnGoalTimeChanged(_ sender: Any) {
         updateView()
+    }
+
+    @IBAction func btnInOutTapped(_ sender: Any) {
     }
 }

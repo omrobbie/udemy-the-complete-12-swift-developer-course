@@ -875,11 +875,24 @@
                                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                         <font key="font" metaFont="system"/>
                                                     </buttonCell>
+                                                    <connections>
+                                                        <action selector="btnInOutTapped:" target="XfG-lQ-9wD" id="U3Y-NT-MX4"/>
+                                                    </connections>
                                                 </button>
+                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="HKx-dI-i2y">
+                                                    <rect key="frame" x="123" y="49" width="114" height="16"/>
+                                                    <textFieldCell key="cell" lineBreakMode="clipping" title="Currently: 4m 23s" id="E1k-No-kpk">
+                                                        <font key="font" metaFont="system"/>
+                                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                </textField>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="HKx-dI-i2y" firstAttribute="centerX" secondItem="lwo-zU-LXh" secondAttribute="centerX" id="0gW-Ut-QCZ"/>
                                                 <constraint firstItem="lwo-zU-LXh" firstAttribute="centerY" secondItem="o0f-fO-RCK" secondAttribute="centerY" id="1iQ-u8-f6u"/>
                                                 <constraint firstItem="lwo-zU-LXh" firstAttribute="centerX" secondItem="o0f-fO-RCK" secondAttribute="centerX" id="Gtq-ON-va9"/>
+                                                <constraint firstItem="HKx-dI-i2y" firstAttribute="top" secondItem="lwo-zU-LXh" secondAttribute="bottom" constant="8" id="yeW-uM-VPe"/>
                                             </constraints>
                                         </customView>
                                     </subviews>
@@ -923,6 +936,8 @@
                     </view>
                     <connections>
                         <outlet property="btnGoalTime" destination="Dga-S3-ZTN" id="woI-sd-bcl"/>
+                        <outlet property="btnInOut" destination="lwo-zU-LXh" id="1aT-4s-jrO"/>
+                        <outlet property="lblInOut" destination="HKx-dI-i2y" id="Xxx-Nb-cTI"/>
                         <outlet property="lblRemaining" destination="wpm-xR-9Ht" id="SvC-jo-Ou9"/>
                         <outlet property="lblTitle" destination="ahN-Ca-kKF" id="bT1-5r-WUQ"/>
                     </connections>
