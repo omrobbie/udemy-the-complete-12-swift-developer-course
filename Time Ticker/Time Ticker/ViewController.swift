@@ -29,6 +29,12 @@ class ViewController: NSViewController {
         return titles
     }
 
+    private func updateView() {
+        let goalTime = btnGoalTime.indexOfSelectedItem + 1
+        lblRemaining.stringValue = "Goal: \(goalTime) Hour\(goalTime == 1 ? "" : "s")"
+    }
+
     @IBAction func btnGoalTimeChanged(_ sender: Any) {
+        updateView()
     }
 }
