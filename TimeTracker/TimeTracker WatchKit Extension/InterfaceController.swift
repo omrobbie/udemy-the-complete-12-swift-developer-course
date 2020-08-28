@@ -114,6 +114,22 @@ class InterfaceController: WKInterfaceController {
         }
     }
 
+    private func totalClockedTime() -> Int {
+        if let clockedIns = standard.array(forKey: keyClockedIns) as? [Date] {
+            if let clockedOuts = standard.array(forKey: keyClockedOuts) as? [Date] {
+                var seconds = 0
+
+                for i in 0..<clockedIns.count {
+                    seconds += Int(clockedOuts[i].timeIntervalSince(clockedIns[i]))
+                }
+
+                return seconds
+            }
+        }
+
+        return 0
+    }
+
     @IBAction func btnInOutTapped() {
         if clockedIn {
             clockOut()
