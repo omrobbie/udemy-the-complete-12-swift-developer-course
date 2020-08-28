@@ -16,6 +16,8 @@ class ViewController: NSViewController {
     @IBOutlet weak var btnInOut: NSButton!
     @IBOutlet weak var lblInOut: NSTextField!
 
+    private var currentPeriod: Period?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         btnGoalTime.removeAllItems()
@@ -36,6 +38,7 @@ class ViewController: NSViewController {
     private func updateView() {
         let goalTime = btnGoalTime.indexOfSelectedItem + 1
         lblTitle.stringValue = "Goal: \(goalTime) Hour\(goalTime == 1 ? "" : "s")"
+        btnInOut.title = currentPeriod == nil ? "IN" : "OUT"
     }
 
     @IBAction func btnGoalTimeChanged(_ sender: Any) {
@@ -43,10 +46,19 @@ class ViewController: NSViewController {
     }
 
     @IBAction func btnInOutTapped(_ sender: Any) {
-        if let context = (NSApp.delegate as? AppDelegate)?.persistentContainer.viewContext {
-            let period = Period(context: context)
-            period.inDate = Date(timeIntervalSinceNow: -1404)
+        if currentPeriod == nil {
+            // check in
+            if let context = (NSApp.delegate as? AppDelegate)?.persistentContainer.viewContext {
+                currentPeriod = Period(context: context)
+                currentPeriod?.inDate = Date(timeIntervalSinceNow: -1404)
+            }
+        } else {
+            // check out
+            currentPeriod!.outDate = Date()
+            currentPeriod = nil
         }
+
+        updateView()
         (NSApp.delegate as? AppDelegate)?.saveAction(nil)
     }
 }
