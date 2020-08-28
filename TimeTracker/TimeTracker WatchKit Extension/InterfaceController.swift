@@ -16,14 +16,20 @@ class InterfaceController: WKInterfaceController {
     @IBOutlet weak var lblDateLarge: WKInterfaceLabel!
     @IBOutlet weak var btnInOut: WKInterfaceButton!
 
+    private let standard = UserDefaults.standard
+
     private var clockedIn = false
+    private var timer: Timer?
 
     override func willActivate() {
         super.willActivate()
+        checkClockedIn()
+        updateView()
     }
 
     private func clockIn() {
-
+        standard.set(Date(), forKey: "clockedIn")
+        standard.synchronize()
     }
 
     private func clockOut() {
@@ -32,6 +38,24 @@ class InterfaceController: WKInterfaceController {
 
     private func updateView() {
 
+    }
+
+    private func startTimer() {
+        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (_) in
+            self.updateView()
+        })
+    }
+
+    private func checkClockedIn() {
+        if standard.value(forKey: "clockedIn") != nil {
+            clockedIn = true
+
+            if timer == nil {
+                startTimer()
+            }
+        } else {
+            clockedIn = false
+        }
     }
 
     @IBAction func btnInOutTapped() {
