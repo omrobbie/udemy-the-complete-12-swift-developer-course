@@ -129,7 +129,7 @@ class ViewController: NSViewController {
             // check in
             if let context = (NSApp.delegate as? AppDelegate)?.persistentContainer.viewContext {
                 currentPeriod = Period(context: context)
-                currentPeriod?.inDate = Date(timeIntervalSinceNow: -1404)
+                currentPeriod?.inDate = Date()
             }
 
             startTimer()
