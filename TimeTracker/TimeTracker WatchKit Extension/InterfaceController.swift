@@ -130,6 +130,20 @@ class InterfaceController: WKInterfaceController {
         return 0
     }
 
+    private func totalTimeWorkedAsString() -> String {
+        var currentClockedInSeconds = 0
+
+        if let clockedInDate = standard.value(forKey: keyClockedIn) as? Date {
+            currentClockedInSeconds = Int(Date().timeIntervalSince(clockedInDate))
+        }
+
+        let totalTimeInterval = currentClockedInSeconds + totalClockedTime()
+        let totalHours = totalTimeInterval / 3600
+        let totalMinutes = (totalTimeInterval % 3600) / 60
+
+        return "\(totalHours)h \(totalMinutes)m"
+    }
+
     @IBAction func btnInOutTapped() {
         if clockedIn {
             clockOut()
