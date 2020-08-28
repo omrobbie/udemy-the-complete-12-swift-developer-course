@@ -49,19 +49,29 @@
             </objects>
             <point key="canvasLocation" x="35" y="30"/>
         </scene>
-        <!--Interface Controller-->
+        <!--History Interface Controller-->
         <scene sceneID="axi-Bl-fZD">
             <objects>
-                <controller id="AIU-bo-wuX">
+                <controller id="AIU-bo-wuX" customClass="HistoryInterfaceController" customModule="TimeTracker_WatchKit_Extension">
                     <items>
                         <table alignment="left" id="v5D-ft-bn1">
                             <items>
-                                <tableRow id="RkW-g0-ese">
-                                    <group key="rootItem" width="1" alignment="left" id="D5G-Nx-91W"/>
+                                <tableRow id="RkW-g0-ese" customClass="HistoryRow" customModule="TimeTracker_WatchKit_Extension">
+                                    <group key="rootItem" width="1" alignment="left" id="D5G-Nx-91W">
+                                        <items>
+                                            <label width="1" height="1" alignment="center" verticalAlignment="center" text="Time" id="fcv-fl-JuT"/>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="label" destination="fcv-fl-JuT" id="vWg-c4-dft"/>
+                                    </connections>
                                 </tableRow>
                             </items>
                         </table>
                     </items>
+                    <connections>
+                        <outlet property="table" destination="v5D-ft-bn1" id="C65-QO-gqx"/>
+                    </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="290" y="25"/>

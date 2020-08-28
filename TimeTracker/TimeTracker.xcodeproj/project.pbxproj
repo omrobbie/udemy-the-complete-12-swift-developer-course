@@ -20,6 +20,8 @@
 		FC31C27B24F8D39E00192A83 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC31C27A24F8D39E00192A83 /* InterfaceController.swift */; };
 		FC31C27D24F8D39E00192A83 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC31C27C24F8D39E00192A83 /* ExtensionDelegate.swift */; };
 		FC31C27F24F8D39F00192A83 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC31C27E24F8D39F00192A83 /* Assets.xcassets */; };
+		FC31C28F24F8E86F00192A83 /* HistoryInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC31C28E24F8E86F00192A83 /* HistoryInterfaceController.swift */; };
+		FC31C29124F8E93300192A83 /* HistoryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC31C29024F8E93300192A83 /* HistoryRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +84,8 @@
 		FC31C27C24F8D39E00192A83 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		FC31C27E24F8D39F00192A83 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FC31C28024F8D39F00192A83 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FC31C28E24F8E86F00192A83 /* HistoryInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryInterfaceController.swift; sourceTree = "<group>"; };
+		FC31C29024F8E93300192A83 /* HistoryRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +154,8 @@
 			isa = PBXGroup;
 			children = (
 				FC31C27A24F8D39E00192A83 /* InterfaceController.swift */,
+				FC31C28E24F8E86F00192A83 /* HistoryInterfaceController.swift */,
+				FC31C29024F8E93300192A83 /* HistoryRow.swift */,
 				FC31C27C24F8D39E00192A83 /* ExtensionDelegate.swift */,
 				FC31C27E24F8D39F00192A83 /* Assets.xcassets */,
 				FC31C28024F8D39F00192A83 /* Info.plist */,
@@ -301,6 +307,8 @@
 			files = (
 				FC31C27D24F8D39E00192A83 /* ExtensionDelegate.swift in Sources */,
 				FC31C27B24F8D39E00192A83 /* InterfaceController.swift in Sources */,
+				FC31C29124F8E93300192A83 /* HistoryRow.swift in Sources */,
+				FC31C28F24F8E86F00192A83 /* HistoryInterfaceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
