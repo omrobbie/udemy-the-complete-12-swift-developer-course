@@ -47,7 +47,7 @@ class ViewController: NSViewController {
         } else {
             btnInOut.title = "OUT"
             lblInOut.isHidden = false
-            lblInOut.stringValue = "Currently:"
+            lblInOut.stringValue = "Currently: \(currentPeriod!.currentlyPeriod())"
         }
     }
 
