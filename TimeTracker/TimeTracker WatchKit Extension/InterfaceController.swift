@@ -31,7 +31,7 @@ class InterfaceController: WKInterfaceController {
     }
 
     private func clockIn() {
-        standard.set(Date(), forKey: keyClockedIn)
+        standard.set(Date(timeIntervalSinceNow: -5000), forKey: keyClockedIn)
         standard.synchronize()
     }
 
@@ -80,7 +80,7 @@ class InterfaceController: WKInterfaceController {
                 }
 
                 if minutes != 0 || hours != 0 {
-                    currentClockInString += "\(minutes)m "
+                    currentClockInString += "\(minutes)m\n"
                 }
 
                 currentClockInString += "\(seconds)s"
