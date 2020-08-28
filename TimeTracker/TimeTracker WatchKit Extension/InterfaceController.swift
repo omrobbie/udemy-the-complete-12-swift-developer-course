@@ -156,6 +156,7 @@ class InterfaceController: WKInterfaceController {
     }
 
     @IBAction func mnHistoryTapped() {
+        pushController(withName: "history", context: nil)
     }
 
     @IBAction func mnResetTapped() {

@@ -49,14 +49,14 @@
             </objects>
             <point key="canvasLocation" x="35" y="30"/>
         </scene>
-        <!--History Interface Controller-->
+        <!--history-->
         <scene sceneID="axi-Bl-fZD">
             <objects>
-                <controller id="AIU-bo-wuX" customClass="HistoryInterfaceController" customModule="TimeTracker_WatchKit_Extension">
+                <controller identifier="history" id="AIU-bo-wuX" customClass="HistoryInterfaceController" customModule="TimeTracker_WatchKit_Extension">
                     <items>
                         <table alignment="left" id="v5D-ft-bn1">
                             <items>
-                                <tableRow id="RkW-g0-ese" customClass="HistoryRow" customModule="TimeTracker_WatchKit_Extension">
+                                <tableRow identifier="row" id="RkW-g0-ese" customClass="HistoryRow" customModule="TimeTracker_WatchKit_Extension">
                                     <group key="rootItem" width="1" alignment="left" id="D5G-Nx-91W">
                                         <items>
                                             <label width="1" height="1" alignment="center" verticalAlignment="center" text="Time" id="fcv-fl-JuT"/>
