@@ -32,5 +32,42 @@
             </objects>
             <point key="canvasLocation" x="35" y="30"/>
         </scene>
+        <!--Interface Controller-->
+        <scene sceneID="axi-Bl-fZD">
+            <objects>
+                <controller id="AIU-bo-wuX">
+                    <items>
+                        <table alignment="left" id="v5D-ft-bn1">
+                            <items>
+                                <tableRow id="RkW-g0-ese">
+                                    <group key="rootItem" width="1" alignment="left" id="D5G-Nx-91W"/>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="290" y="25"/>
+        </scene>
+        <!--Interface Controller-->
+        <scene sceneID="BMF-ks-h4o">
+            <objects>
+                <controller id="wfE-l8-9E9">
+                    <items>
+                        <label alignment="left" alpha="0.59999999999999998" text="Clock-In" id="ceM-JQ-H8t"/>
+                        <label alignment="left" text="Aug 5th 4:32pm" id="wGi-ag-dKQ">
+                            <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                        </label>
+                        <separator alignment="left" alpha="0.0" id="7zK-uy-CYC"/>
+                        <separator alignment="left" alpha="0.0" id="aPk-tR-MHQ"/>
+                        <label alignment="left" alpha="0.59999999999999998" text="Clock-Out" id="pUc-al-ohE"/>
+                        <label alignment="left" text="Aug 5h 4:44pm" id="6Y3-et-ZwN">
+                            <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                        </label>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="290" y="334"/>
+        </scene>
     </scenes>
 </document>
