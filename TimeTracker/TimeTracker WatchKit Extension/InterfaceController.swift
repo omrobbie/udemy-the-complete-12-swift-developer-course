@@ -16,11 +16,6 @@ class InterfaceController: WKInterfaceController {
     @IBOutlet weak var lblDateLarge: WKInterfaceLabel!
     @IBOutlet weak var btnInOut: WKInterfaceButton!
 
-    private let standard = UserDefaults.standard
-    private let keyClockedIn = "clockedIn"
-    private let keyClockedIns = "clockedIns"
-    private let keyClockedOuts = "clockedOuts"
-
     private var clockedIn = false
     private var timer: Timer?
 

@@ -22,6 +22,7 @@
 		FC31C27F24F8D39F00192A83 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC31C27E24F8D39F00192A83 /* Assets.xcassets */; };
 		FC31C28F24F8E86F00192A83 /* HistoryInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC31C28E24F8E86F00192A83 /* HistoryInterfaceController.swift */; };
 		FC31C29124F8E93300192A83 /* HistoryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC31C29024F8E93300192A83 /* HistoryRow.swift */; };
+		FC31C29324F8ED4A00192A83 /* UserDefaultsHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC31C29224F8ED4A00192A83 /* UserDefaultsHelpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +87,7 @@
 		FC31C28024F8D39F00192A83 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FC31C28E24F8E86F00192A83 /* HistoryInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryInterfaceController.swift; sourceTree = "<group>"; };
 		FC31C29024F8E93300192A83 /* HistoryRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryRow.swift; sourceTree = "<group>"; };
+		FC31C29224F8ED4A00192A83 /* UserDefaultsHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsHelpers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +158,7 @@
 				FC31C27A24F8D39E00192A83 /* InterfaceController.swift */,
 				FC31C28E24F8E86F00192A83 /* HistoryInterfaceController.swift */,
 				FC31C29024F8E93300192A83 /* HistoryRow.swift */,
+				FC31C29224F8ED4A00192A83 /* UserDefaultsHelpers.swift */,
 				FC31C27C24F8D39E00192A83 /* ExtensionDelegate.swift */,
 				FC31C27E24F8D39F00192A83 /* Assets.xcassets */,
 				FC31C28024F8D39F00192A83 /* Info.plist */,
@@ -305,6 +308,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC31C29324F8ED4A00192A83 /* UserDefaultsHelpers.swift in Sources */,
 				FC31C27D24F8D39E00192A83 /* ExtensionDelegate.swift in Sources */,
 				FC31C27B24F8D39E00192A83 /* InterfaceController.swift in Sources */,
 				FC31C29124F8E93300192A83 /* HistoryRow.swift in Sources */,
