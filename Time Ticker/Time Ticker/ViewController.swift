@@ -43,5 +43,10 @@ class ViewController: NSViewController {
     }
 
     @IBAction func btnInOutTapped(_ sender: Any) {
+        if let context = (NSApp.delegate as? AppDelegate)?.persistentContainer.viewContext {
+            let period = Period(context: context)
+            period.inDate = Date(timeIntervalSinceNow: -1404)
+        }
+        (NSApp.delegate as? AppDelegate)?.saveAction(nil)
     }
 }
