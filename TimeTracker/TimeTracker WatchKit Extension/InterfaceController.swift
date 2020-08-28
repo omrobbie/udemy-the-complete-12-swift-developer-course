@@ -17,6 +17,9 @@ class InterfaceController: WKInterfaceController {
     @IBOutlet weak var btnInOut: WKInterfaceButton!
 
     private let standard = UserDefaults.standard
+    private let keyClockedIn = "clockedIn"
+    private let keyClockedIns = "clockedIns"
+    private let keyClockedOuts = "clockedOuts"
 
     private var clockedIn = false
     private var timer: Timer?
@@ -28,7 +31,7 @@ class InterfaceController: WKInterfaceController {
     }
 
     private func clockIn() {
-        standard.set(Date(), forKey: "clockedIn")
+        standard.set(Date(), forKey: keyClockedIn)
         standard.synchronize()
     }
 
@@ -36,19 +39,19 @@ class InterfaceController: WKInterfaceController {
         timer?.invalidate()
         timer = nil
 
-        if let clockedInDate = standard.value(forKey: "clockedIn") as? Date {
-            if var clockedIns = standard.array(forKey: "clockedIns") as? [Date] {
+        if let clockedInDate = standard.value(forKey: keyClockedIn) as? Date {
+            if var clockedIns = standard.array(forKey: keyClockedIns) as? [Date] {
                 clockedIns.insert(clockedInDate, at: 0)
-                standard.set(clockedIns, forKey: "clockedIns")
+                standard.set(clockedIns, forKey: keyClockedIns)
             } else {
-                standard.set([clockedInDate], forKey: "clockedIns")
+                standard.set([clockedInDate], forKey: keyClockedIns)
             }
 
-            if var clockedOuts = standard.array(forKey: "clockedOuts") as? [Date] {
+            if var clockedOuts = standard.array(forKey: keyClockedOuts) as? [Date] {
                 clockedOuts.insert(clockedInDate, at: 0)
-                standard.set(clockedOuts, forKey: "clockedOuts")
+                standard.set(clockedOuts, forKey: keyClockedOuts)
             } else {
-                standard.set([clockedInDate], forKey: "clockedOuts")
+                standard.set([clockedInDate], forKey: keyClockedOuts)
             }
         }
     }
@@ -64,7 +67,7 @@ class InterfaceController: WKInterfaceController {
     }
 
     private func checkClockedIn() {
-        if standard.value(forKey: "clockedIn") != nil {
+        if standard.value(forKey: keyClockedIn) != nil {
             clockedIn = true
 
             if timer == nil {
