@@ -33,7 +33,24 @@ class InterfaceController: WKInterfaceController {
     }
 
     private func clockOut() {
+        timer?.invalidate()
+        timer = nil
 
+        if let clockedInDate = standard.value(forKey: "clockedIn") as? Date {
+            if var clockedIns = standard.array(forKey: "clockedIns") as? [Date] {
+                clockedIns.insert(clockedInDate, at: 0)
+                standard.set(clockedIns, forKey: "clockedIns")
+            } else {
+                standard.set([clockedInDate], forKey: "clockedIns")
+            }
+
+            if var clockedOuts = standard.array(forKey: "clockedOuts") as? [Date] {
+                clockedOuts.insert(clockedInDate, at: 0)
+                standard.set(clockedOuts, forKey: "clockedOuts")
+            } else {
+                standard.set([clockedInDate], forKey: "clockedOuts")
+            }
+        }
     }
 
     private func updateView() {
