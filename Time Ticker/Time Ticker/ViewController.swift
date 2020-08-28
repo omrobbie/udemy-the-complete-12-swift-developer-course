@@ -17,6 +17,7 @@ class ViewController: NSViewController {
     @IBOutlet weak var lblInOut: NSTextField!
 
     private var currentPeriod: Period?
+    private var timer: Timer?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +39,16 @@ class ViewController: NSViewController {
     private func updateView() {
         let goalTime = btnGoalTime.indexOfSelectedItem + 1
         lblTitle.stringValue = "Goal: \(goalTime) Hour\(goalTime == 1 ? "" : "s")"
-        btnInOut.title = currentPeriod == nil ? "IN" : "OUT"
+
+        if currentPeriod == nil {
+            btnInOut.title = "IN"
+            lblInOut.isHidden = true
+            lblInOut.stringValue = ""
+        } else {
+            btnInOut.title = "OUT"
+            lblInOut.isHidden = false
+            lblInOut.stringValue = "Currently:"
+        }
     }
 
     @IBAction func btnGoalTimeChanged(_ sender: Any) {
@@ -52,10 +62,16 @@ class ViewController: NSViewController {
                 currentPeriod = Period(context: context)
                 currentPeriod?.inDate = Date(timeIntervalSinceNow: -1404)
             }
+
+            timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (_) in
+                self.updateView()
+            })
         } else {
             // check out
             currentPeriod!.outDate = Date()
             currentPeriod = nil
+            timer?.invalidate()
+            timer = nil
         }
 
         updateView()
