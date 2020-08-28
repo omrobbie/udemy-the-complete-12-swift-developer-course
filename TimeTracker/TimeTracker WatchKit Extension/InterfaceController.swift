@@ -53,6 +53,9 @@ class InterfaceController: WKInterfaceController {
             } else {
                 standard.set([clockedInDate], forKey: keyClockedOuts)
             }
+
+            standard.set(nil, forKey: keyClockedIn)
+            standard.synchronize()
         }
     }
 
