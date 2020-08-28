@@ -69,15 +69,19 @@ class ViewController: NSViewController {
                 let fetchRequest = NSFetchRequest<Period>(entityName: name)
                 fetchRequest.sortDescriptors = [NSSortDescriptor(key: "outDate", ascending: false)]
 
-                if let periods = try? context.fetch(fetchRequest) {
-                    self.periods = periods
+                if var periods = try? context.fetch(fetchRequest) {
+                    for i in 0..<periods.count {
+                        let period = periods[i]
 
-                    for period in periods {
                         if period.outDate == nil {
                             currentPeriod = period
                             startTimer()
+                            periods.remove(at: i)
+                            break
                         }
                     }
+
+                    self.periods = periods
                 }
             }
         }
