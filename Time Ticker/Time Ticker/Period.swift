@@ -11,13 +11,13 @@ import Cocoa
 extension Period {
     func currentlyPeriod() -> String {
         if let inDate = inDate {
-            return stringFromDates(date1: inDate, date2: Date())
+            return Period.stringFromDates(date1: inDate, date2: Date())
         }
 
         return "Error get current period"
     }
 
-    func stringFromDates(date1: Date, date2: Date) -> String {
+    class func stringFromDates(date1: Date, date2: Date) -> String {
         var theString = ""
         let cal = Calendar.current.dateComponents([.hour, .minute, .second], from: date1, to: date2)
 

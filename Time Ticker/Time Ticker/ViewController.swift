@@ -114,9 +114,10 @@ class ViewController: NSViewController {
         let remainingTime = goalTimeInterval() - totalTimeInterval()
 
         if remainingTime <= 0 {
-            return "Finished!"
+            return "Finished! \(Period.stringFromDates(date1: Date(), date2: Date(timeIntervalSinceNow: totalTimeInterval())))"
+        } else {
+            return "Remaining: \(Period.stringFromDates(date1: Date(), date2: Date(timeIntervalSinceNow: remainingTime)))"
         }
-        return ""
     }
 
     @IBAction func btnGoalTimeChanged(_ sender: Any) {
@@ -155,7 +156,7 @@ extension ViewController: NSTableViewDelegate, NSTableViewDataSource {
         let cell = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "cell"), owner: self) as? PeriodCell
         let period = periods[row]
         cell?.lblTimeRange.stringValue = "\(period.prettyInDate()) - \(period.prettyOutDate())"
-        cell?.lblTimeTotal.stringValue = "\(period.stringFromDates(date1: Date(), date2: Date(timeIntervalSinceNow: period.time())))"
+        cell?.lblTimeTotal.stringValue = "\(Period.stringFromDates(date1: Date(), date2: Date(timeIntervalSinceNow: period.time())))"
         return cell
     }
 }
