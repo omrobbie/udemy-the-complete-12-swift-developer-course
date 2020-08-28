@@ -60,7 +60,40 @@ class InterfaceController: WKInterfaceController {
     }
 
     private func updateView() {
+        if clockedIn {
+            lblDateSmall.setHidden(false)
+            lblDateSmall.setText("Today: 3h 44m")
+            lblDateLarge.setText("")
+            btnInOut.setTitle("Clock-Out")
+            btnInOut.setBackgroundColor(.red)
 
+            if let clockedInDate = standard.value(forKey: keyClockedIn) as? Date {
+                let timeInterval = Int(Date().timeIntervalSince(clockedInDate))
+                let hours = timeInterval / 3600
+                let minutes = (timeInterval % 3600) / 60
+                let seconds = timeInterval % 60
+
+                var currentClockInString = ""
+
+                if hours != 0 {
+                    currentClockInString += "\(hours)h "
+                }
+
+                if minutes != 0 || hours != 0 {
+                    currentClockInString += "\(minutes)m "
+                }
+
+                currentClockInString += "\(seconds)s"
+                lblDateLarge.setText(currentClockInString)
+                startTimer()
+            }
+        } else {
+            lblDateSmall.setHidden(true)
+            lblDateSmall.setText("")
+            lblDateLarge.setText("Today\n3h 44m")
+            btnInOut.setTitle("Clock-Out")
+            btnInOut.setBackgroundColor(.green)
+        }
     }
 
     private func startTimer() {
